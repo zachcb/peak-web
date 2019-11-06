@@ -1,0 +1,32 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".npm-offline-cache": true
+  },
+
+  "editor.formatOnSave": false,
+  "editor.formatOnSaveTimeout": 3000,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  // "eslint.provideLintTask": true,
+  "eslint.options": {
+    "extensions": [
+      ".html",
+      ".js",
+      ".jsx"
+    ],
+  },
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}
