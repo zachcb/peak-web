@@ -8,6 +8,7 @@
   "editor.formatOnSaveTimeout": 3000,
   "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
+  "editor.wordWrap": true,
   // "eslint.provideLintTask": true,
   "eslint.options": {
     "extensions": [
