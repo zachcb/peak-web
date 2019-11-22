@@ -10,7 +10,10 @@ const DefaultLayout = (props) => {
 
   return (
     <div className={`${styles["default-layout"]} relative overflow-hidden`}>
-      {children}
+      <div className={`${styles["content-wrapper"]}`}>
+        {children}
+      </div>
+
       <BottomNav />
     </div>
   );
