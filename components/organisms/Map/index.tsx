@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
-import "./styles.css";
+import styles from "./styles.css";
 
 const MapBox = ReactMapboxGl({
   accessToken:
