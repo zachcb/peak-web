@@ -1,4 +1,4 @@
 {
     "name": "input",
-    "main": "index.jsx"
+    "main": "index.tsx"
 }

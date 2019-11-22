@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import DefaultLayout from "layouts/Default";
-import Input from "components/atoms/Input";
+import Input from "@components/atoms/Input";
 
 const Create = () => (
   <div>
