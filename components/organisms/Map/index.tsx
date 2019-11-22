@@ -7,16 +7,26 @@ const MapBox = ReactMapboxGl({
     "pk.eyJ1IjoiemFjaGNiIiwiYSI6ImNhei1feXMifQ.XcXFZI9R6Uj9_F3g4zDOgg",
 });
 
-const coordinates = [-105.0293315, 39.7616077];
+type Props = {
+  label: string;
+  coordinates: [number, number];
+};
 
-class Map extends Component {
-  constructor() {
-    super();
+type State = {
+  center: [number, number];
+  zoom: number;
+};
 
-    this.state = {
-      zoom: 10,
-    };
-  }
+class Map extends Component<Props, State> {
+  static defaultProps: Props = {
+    label: "",
+    coordinates: [0, 0]
+  };
+
+  state: State = {
+    center: this.props.coordinates,
+    zoom: 10,
+  };
 
   componentDidMount() {
     setTimeout(() => {
@@ -25,21 +35,20 @@ class Map extends Component {
   }
 
   render() {
-    console.log("render");
+    const { center, zoom } = this.state;
+
     return process.browser ? (
       <MapBox
-        // eslint-disable-next-line
         style="mapbox://styles/zachcb/ck2cn1nld0mqs1cms10rf26y9"
-        // eslint-disable-next-line
-        zoom={[this.state.zoom]}
-        center={coordinates}
+        zoom={[zoom]}
+        center={center}
         containerStyle={{
           height: "100vh",
           width: "100vw",
         }}
       >
         <Layer type="symbol" id="marker" layout={{ "icon-image": "marker-15" }}>
-          <Feature coordinates={coordinates} />
+          <Feature coordinates={center} />
         </Layer>
       </MapBox>
     ) : <div>Loading...</div>;

@@ -14,7 +14,7 @@ const Home = () => (
     </Head>
 
     <DefaultLayout>
-      <Map />
+      <Map label="primary-map" coordinates={[-105.0293315, 39.7616077]} />
     </DefaultLayout>
   </div>
 );
