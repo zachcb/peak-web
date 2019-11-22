@@ -1,6 +1,11 @@
 :global {
-    @tailwind base; 
-    @tailwind components; 
-    @tailwind utilities; 
-    @tailwind screens;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @tailwind screens;
+
+  html, body, #__next {
+    height: 100%;
+    width: 100%;
+  }
 }
