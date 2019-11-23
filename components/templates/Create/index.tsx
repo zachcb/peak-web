@@ -1,20 +1,21 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import DefaultLayout from "layouts/Default";
-
-const Map = dynamic(() => import("components/organisms/Map"), { ssr: false });
+import CreateSearchForm from "components/organisms/CreateSearchForm";
 
 type Props = {
-  coordinates: [number, number];
+
 };
 
-function Create({ coordinates }: Props) {
+function Create() {
   return (
     <DefaultLayout>
-      <Map
-        label="primary-map"
-        coordinates={coordinates}
-      />
+      <h1>
+        <span className="text-2xl font-black tracking-widest leading-loose">
+          create search
+        </span>
+      </h1>
+
+      <CreateSearchForm />
     </DefaultLayout>
   );
 }

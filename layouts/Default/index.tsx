@@ -10,8 +10,10 @@ type Props = {
 
 function DefaultLayout({ children }: Props) {
   return (
-    <div className={`${styles["default-layout"]} relative overflow-hidden`}>
-      <div className={`${styles["content-wrapper"]}`}>{children}</div>
+    <div className={`min-h-full bg-primary relative overflow-hidden font-mono text-gray-800 ${styles["default-layout"]}`}>
+      <div className={`p-5 ${styles["content-wrapper"]}`}>
+        {children}
+      </div>
 
       <BottomNav isActive />
     </div>
