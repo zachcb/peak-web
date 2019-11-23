@@ -21,44 +21,54 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: './tsconfig.json',
-    tsconfigRootDir: './',
+    project: "./tsconfig.json",
+    tsconfigRootDir: "./",
   },
 
   extends: [
+    'airbnb',
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+
+    // "plugin:prettier/recommended",
+    // "prettier/@typescript-eslint",
+
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
   ],
 
-  plugins: ["react", "@typescript-eslint", "prettier"],
+  plugins: [
+    "react",
+    // "@typescript-eslint",
+    // "prettier"
+  ],
 
   rules: {
-    // "import/no-extraneous-dependencies": 0,
-    // "react/forbid-prop-types": 0,
-    // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    // "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    // semi: ["error", "always"],
-    // "jsx-quotes": ["error", "prefer-double"],
-    // quotes: ["error", "double"],
-    // "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": [2, { "packageDir": "./" }],
     "react/jsx-filename-extension": [1, {
-      "extensions": [
-        ".jsx",
-        ".tsx"
-      ]
+      "extensions": [".jsx", ".tsx"]
     }],
-    "prettier/prettier": ["error", { "singleQuote": true }],
-    '@typescript-eslint/interface-name-prefix': 2,
-    '@typescript-eslint/no-explicit-any': 2,
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/no-non-null-assertion': 0,
-    '@typescript-eslint/no-use-before-define': 0,
+    "react/destructuring-assignment": 0,
+    "react/static-property-placement": 0,
+    "react/state-in-constructor": 0,
+    'react/jsx-first-prop-new-line': [1, 'multiline'],
+    'react/jsx-max-props-per-line': [1,
+      {
+          'maximum': 1
+      }
+    ],
+    "quotes": [1, "double"],
+    "@typescript-eslint/quotes": [1, "double"],
+    "@typescript-eslint/interface-name-prefix": 2,
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
-    '@typescript-eslint/member-delimiter-style': [2, {
+    "@typescript-eslint/member-delimiter-style": [2, {
       multiline: {
           delimiter: "semi",
           requireLast: true
@@ -71,10 +81,14 @@ module.exports = {
   },
 
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     "import/resolver": {
       "node": {
         "paths": ["./"]
-      }
+      },
+      typescript: {},
     },
     react: {
       pragma: "React",
