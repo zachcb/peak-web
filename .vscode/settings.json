@@ -4,22 +4,20 @@
     ".npm-offline-cache": true
   },
 
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": false,
-  "editor.formatOnSaveTimeout": 3000,
-  "eslint.autoFixOnSave": true,
+  "eslint.enable": true,
   "eslint.alwaysShowStatus": true,
-  "editor.wordWrap": true,
-  // "eslint.provideLintTask": true,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSaveTimeout": 3000,
+  "editor.wordWrap": "on",
+  "prettier.eslintIntegration": true,
   "eslint.options": {
     "extensions": [
       ".html",
       ".js",
       ".jsx"
     ],
-  },
-
-  "[typescript]": {
-    "editor.formatOnSave": false,
   },
 
   "eslint.validate": [
@@ -34,11 +32,9 @@
       "autoFix": true
     }
   ],
-
   "emmet.syntaxProfiles": {
     "postcss": "css"
   },
-
   "files.associations": {
     "*.css": "postcss"
   }

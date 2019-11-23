@@ -1,26 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
 import BottomNav from "components/organisms/BottomNav";
 
 import "./tailwind.css";
 import styles from "./styles.css";
 
-const DefaultLayout = (props) => {
-  const { children } = props;
+type Props = {
+  children: React.ReactNode;
+};
 
+function DefaultLayout({ children }: Props) {
   return (
     <div className={`${styles["default-layout"]} relative overflow-hidden`}>
-      <div className={`${styles["content-wrapper"]}`}>
-        {children}
-      </div>
+      <div className={`${styles["content-wrapper"]}`}>{children}</div>
 
-      <BottomNav />
+      <BottomNav isActive />
     </div>
   );
-};
-
-DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+}
 
 export default DefaultLayout;

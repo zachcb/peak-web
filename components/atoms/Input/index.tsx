@@ -1,28 +1,25 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./styles.css";
 
-const Input = ({ type, placeholder, children, onChange }) => (
-  <input
-    className={`${styles.input}`}
-    type={type}
-    placeholder={placeholder}
-    value={children}
-    onChange={onChange}
-  />
-);
-
-Input.defaultProps = {
-  type: "submit",
-  placeholder: "",
-  children: "",
+type Props = {
+  type: string;
+  placeholder: string;
+  value: string | number;
+  onChange?: React.FormEventHandler<HTMLInputElement>;
 };
 
-Input.propTypes = {
-  type: PropTypes.string,
-  placeholder: PropTypes.string,
-  children: PropTypes.string,
-  onChange: PropTypes.func.isRequired
-};
+function Input({
+  type = "submit", placeholder = "", value, onChange,
+}: Props) {
+  return (
+    <input
+      className={`${styles.input}`}
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+    />
+  );
+}
 
 export default Input;
