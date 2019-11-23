@@ -18,9 +18,21 @@
     ],
   },
 
+  "[typescript]": {
+    "editor.formatOnSave": false,
+  },
+
   "eslint.validate": [
     "javascript",
-    "javascriptreact"
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
   ],
 
   "emmet.syntaxProfiles": {

@@ -8,34 +8,77 @@ module.exports = {
   root: true,
 
   env: {
-    node: true,
     browser: true,
-    es6: true
+    jasmine: true,
+    jest: true
   },
 
-  parser: "babel-eslint",
+  parser: "@typescript-eslint/parser",
+
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
+    project: './tsconfig.json',
+    tsconfigRootDir: './',
+  },
 
   extends: [
-    "airbnb",
-    // "eslint:recommended",
-    // "plugin:react/recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
 
+  plugins: ["react", "@typescript-eslint", "prettier"],
+
   rules: {
-    "import/no-extraneous-dependencies": 0,
-    "react/forbid-prop-types": 0,
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    semi: ["error", "always"],
-    "jsx-quotes": ["error", "prefer-double"],
-    quotes: ["error", "double"]
+    // "import/no-extraneous-dependencies": 0,
+    // "react/forbid-prop-types": 0,
+    // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    // "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    // semi: ["error", "always"],
+    // "jsx-quotes": ["error", "prefer-double"],
+    // quotes: ["error", "double"],
+    // "import/no-unresolved": 0,
+    "react/jsx-filename-extension": [1, {
+      "extensions": [
+        ".jsx",
+        ".tsx"
+      ]
+    }],
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    '@typescript-eslint/interface-name-prefix': 2,
+    '@typescript-eslint/no-explicit-any': 2,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    '@typescript-eslint/member-delimiter-style': [2, {
+      multiline: {
+          delimiter: "semi",
+          requireLast: true
+      },
+      singleline: {
+          delimiter: "semi",
+          requireLast: false
+      }
+    }],
   },
 
-  "settings": {
+  settings: {
     "import/resolver": {
       "node": {
         "paths": ["./"]
       }
+    },
+    react: {
+      pragma: "React",
+      version: "detect",
     },
   },
 
