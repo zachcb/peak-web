@@ -30,10 +30,6 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-
-    // "plugin:prettier/recommended",
-    // "prettier/@typescript-eslint",
-
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
@@ -41,8 +37,8 @@ module.exports = {
 
   plugins: [
     "react",
-    // "@typescript-eslint",
-    // "prettier"
+    "react-hooks",
+    "jsx-a11y",
   ],
 
   rules: {
