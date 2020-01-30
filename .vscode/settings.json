@@ -37,5 +37,8 @@
   },
   "files.associations": {
     "*.css": "postcss"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
 }
