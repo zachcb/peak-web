@@ -14,13 +14,13 @@ function BottomNav({ isActive }: Props) {
     className={`absolute bottom-0 z-50 w-screen flex flex-wrap content-between text-center bg-white ${styles["bottom-nav"]}`}
   >
     <div className="w-1/3">
-      <Link href="/discover">discover</Link>
+      <Link href="/discover"><span>discover</span></Link>
     </div>
     <div className="w-1/3">
-      <Link href="/create">create</Link>
+      <Link href="/create"><span>create</span></Link>
     </div>
     <div className="w-1/3">
-      <Link href="/profile">profile</Link>
+      <Link href="/profile"><span>profile</span></Link>
     </div>
   </div>
   )
