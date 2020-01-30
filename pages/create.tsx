@@ -4,7 +4,7 @@ import CreateTemplate from "components/templates/Create";
 
 function Create() {
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>Create</title>
         <link
@@ -14,7 +14,7 @@ function Create() {
       </Head>
 
       <CreateTemplate />
-    </>
+    </React.Fragment>
   );
 }
 
