@@ -8,6 +8,7 @@ module.exports = {
   root: true,
 
   env: {
+    es6: true,
     browser: true,
     jasmine: true,
     jest: true
@@ -26,7 +27,7 @@ module.exports = {
   },
 
   extends: [
-    'airbnb',
+    // 'airbnb',
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
