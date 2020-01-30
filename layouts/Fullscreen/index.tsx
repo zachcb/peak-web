@@ -8,10 +8,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-function DefaultLayout({ children }: Props) {
+function FullscreenLayout({ children }: Props) {
   return (
-    <div className={`min-h-full bg-primary relative overflow-hidden font-mono text-gray-800 ${styles["default-layout"]}`}>
-      <div className={`p-5 ${styles["content-wrapper"]}`}>
+    <div className={`h-full min-h-full bg-primary relative overflow-hidden font-mono text-gray-800 ${styles["default-layout"]}`}>
+      <div className={`h-full ${styles["content-wrapper"]}`}>
         {children}
       </div>
 
@@ -20,4 +20,4 @@ function DefaultLayout({ children }: Props) {
   );
 }
 
-export default DefaultLayout;
+export default FullscreenLayout;
