@@ -1,6 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import DefaultLayout from "layouts/Default";
+import FullscreenLayout from "layouts/Fullscreen";
 
 const Map = dynamic(() => import("components/organisms/Map"), { ssr: false });
 
@@ -10,12 +10,12 @@ type Props = {
 
 function Discover({ coordinates }: Props) {
   return (
-    <DefaultLayout>
+    <FullscreenLayout>
       <Map
         label="primary-map"
         coordinates={coordinates}
       />
-    </DefaultLayout>
+    </FullscreenLayout>
   );
 }
 

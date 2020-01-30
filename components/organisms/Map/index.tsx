@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
-// import styles from "./styles.css";
+import styles from "./styles.css";
 
 const MapBox = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoiemFjaGNiIiwiYSI6ImNhei1feXMifQ.XcXFZI9R6Uj9_F3g4zDOgg",
@@ -43,8 +43,8 @@ class Map extends Component<Props, State> {
         zoom={[zoom]}
         center={center}
         containerStyle={{
-          height: "100vh",
-          width: "100vw",
+          height: "100%",
+          width: "100%",
         }}
       >
         <Layer
