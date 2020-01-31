@@ -1,15 +1,9 @@
 import React from "react";
 import Head from "next/head";
 import DiscoverTemplate from "components/templates/Discover";
-import { getLocation } from "utils";
+import { GeolocationContext, GeolocationProvider } from "context/Geolocation";
 
-async function Discover() {
-  const {
-    latitude = -105.0293315,
-    longitude = 39.7616077,
-  } = await getLocation();
-  const coordinates = [latitude, longitude];
-
+function Discover() {
   return (
     <React.Fragment>
       <Head>
@@ -20,7 +14,11 @@ async function Discover() {
         />
       </Head>
 
-      <DiscoverTemplate coordinates={coordinates} />
+      <GeolocationProvider>
+        <GeolocationContext.Consumer>
+          {({ coordinates }) => <DiscoverTemplate coordinates={coordinates} />}
+        </GeolocationContext.Consumer>
+      </GeolocationProvider>
     </React.Fragment>
   );
 }

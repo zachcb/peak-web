@@ -5,11 +5,11 @@ export interface Coordinates {
 
 export function getCurrentPosition(options: object = {}): Promise<{ coords: Coordinates }> {
   return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(resolve, reject, options);
+      process.browser && navigator.geolocation.getCurrentPosition(resolve, reject, options);
   });
 }
 
-export async function fetchCoordinates() {
+export async function fetchCoordinates(): Promise<[number, number]> {
   const options = {
     enableHighAccuracy: true,
     timeout: 5000,

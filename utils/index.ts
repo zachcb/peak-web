@@ -1,3 +1,3 @@
-import { getLocation } from "./geolocation";
+import { fetchCoordinates } from "./geolocation";
 
-export { getLocation }
+export { fetchCoordinates }
